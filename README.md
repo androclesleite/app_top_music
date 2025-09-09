@@ -39,7 +39,7 @@ docker-compose up -d
 - ✅ Busca e filtros avançados
 
 ### Tecnologias:
-- **Backend**: Laravel 10 + MySQL + Redis
+- **Backend**: Laravel 11 + MySQL + Redis
 - **Frontend**: React + TypeScript + Tailwind CSS
 - **Container**: Docker + Apache
 
@@ -78,7 +78,7 @@ docker-compose down -v && docker-compose up -d
 
 ## 🧪 Testar API
 
-1. Use o arquivo `backend/POSTMAN.md` com todas as rotas
+1. Use o arquivo `backend/POSTMAN.md` com todas as rotas ou importe: Postman_Collection.json
 2. Faça login para obter token de autenticação
 3. Teste endpoints protegidos com o token
 
