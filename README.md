@@ -19,7 +19,7 @@ docker-compose up -d
 
 **Login Admin:**
 - Email: `admin@techpines.com.br`  
-- Senha: `123456`
+- Senha: `password123`
 
 **PHPMyAdmin:**
 - Servidor: `mysql`
@@ -33,7 +33,7 @@ docker-compose up -d
 ### Funcionalidades Principais:
 - ✅ Top 5 músicas com sistema de posicionamento
 - ✅ Sugestões de usuários com aprovação admin
-- ✅ Player integrado com YouTube
+- ✅ Links diretos para YouTube
 - ✅ Painel administrativo completo
 - ✅ API RESTful com autenticação Sanctum
 - ✅ Busca e filtros avançados
@@ -51,6 +51,8 @@ docker-compose up -d
 ![alt text](image.png)
 
 ![alt text](image-1.png)
+
+![alt text](image-4.png)
 ### Painel Administrativo
 ![alt text](image-2.png)
 
