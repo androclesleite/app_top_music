@@ -199,8 +199,16 @@ class ApiService {
   }
 
   async updateSuggestion(id: string, update: UpdateSuggestionRequest): Promise<SongSuggestion> {
-    const response: AxiosResponse<SongSuggestion> = await this.api.put(`/suggestions/${id}`, update);
-    return response.data;
+    const response: AxiosResponse<{success: boolean, data: any}> = await this.api.put(`/suggestions/${id}`, update);
+    
+    // Handle different response structures based on action
+    if (response.data.data.suggestion) {
+      // Approve action returns {suggestion: {...}, song: {...}}
+      return response.data.data.suggestion;
+    } else {
+      // Reject action returns the suggestion directly
+      return response.data.data;
+    }
   }
 
   async deleteSuggestion(id: string): Promise<void> {

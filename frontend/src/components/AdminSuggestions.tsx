@@ -57,15 +57,22 @@ export const AdminSuggestions: React.FC = () => {
   const handleApprove = async (suggestion: SongSuggestion) => {
     try {
       await actions.updateSuggestion(suggestion.id, { 
-        status: 'approved',
+        status: 'approve',
         admin_notes: 'Sugestão aprovada automaticamente'
       });
       
       toast({
         title: "Sugestão aprovada!",
-        description: `"${suggestion.title}" foi aprovada com sucesso.`,
+        description: `"${suggestion.title}" foi aprovada com sucesso e adicionada ao catálogo.`,
         variant: "success",
       });
+
+      // Refresh the list to show updated status with current filters
+      const filters: SuggestionFilters = {
+        search: searchTerm || undefined,
+        status: statusFilter === 'all' ? undefined : statusFilter as any,
+      };
+      actions.fetchSuggestions(pagination.page, filters);
     } catch (error) {
       toast({
         title: "Erro ao aprovar sugestão",
@@ -78,7 +85,7 @@ export const AdminSuggestions: React.FC = () => {
   const handleReject = async (suggestion: SongSuggestion) => {
     try {
       await actions.updateSuggestion(suggestion.id, { 
-        status: 'rejected',
+        status: 'reject',
         admin_notes: 'Sugestão rejeitada'
       });
       
@@ -87,6 +94,13 @@ export const AdminSuggestions: React.FC = () => {
         description: `"${suggestion.title}" foi rejeitada.`,
         variant: "success",
       });
+
+      // Refresh the list to show updated status with current filters
+      const filters: SuggestionFilters = {
+        search: searchTerm || undefined,
+        status: statusFilter === 'all' ? undefined : statusFilter as any,
+      };
+      actions.fetchSuggestions(pagination.page, filters);
     } catch (error) {
       toast({
         title: "Erro ao rejeitar sugestão",
