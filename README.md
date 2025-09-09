@@ -48,13 +48,14 @@ docker-compose up -d
 ## 📱 Screenshots do Sistema
 
 ### Home Page
-*Aqui você pode colar um print da home page mostrando o Top 5*
+![alt text](image.png)
 
+![alt text](image-1.png)
 ### Painel Administrativo
-*Aqui você pode colar um print do painel admin*
+![alt text](image-2.png)
 
 ### Página de Sugestões
-*Aqui você pode colar um print da tela de sugestões*
+![alt text](image-3.png)
 
 ---
 
