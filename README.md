@@ -84,6 +84,25 @@ docker-compose down -v && docker-compose up -d
 2. Faça login para obter token de autenticação
 3. Teste endpoints protegidos com o token
 
+## 🔬 Testes Unitários
+
+Execute os testes do backend:
+
+```bash
+# Dentro do container
+docker-compose exec backend php artisan test
+
+# Ou usando o script
+docker-compose exec backend ./run-tests.sh
+```
+
+**Cobertura de Testes:**
+- ✅ Models (User, Song, SongSuggestion)
+- ✅ Services (Auth, Song, Suggestion) 
+- ✅ Controllers/API (Auth, Songs, Suggestions)
+- ✅ Validações e autorizações
+- ✅ Scopes e filtros
+
 ---
 
 **✅ Tudo funciona automaticamente após o `docker-compose up -d`**
