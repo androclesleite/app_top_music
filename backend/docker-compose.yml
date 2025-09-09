@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: tiao_carreiro_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+      - ./storage:/var/www/html/storage
+      - ./bootstrap/cache:/var/www/html/bootstrap/cache
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    networks:
+      - tiao_carreiro
+
+networks:
+  tiao_carreiro:
+    driver: bridge
